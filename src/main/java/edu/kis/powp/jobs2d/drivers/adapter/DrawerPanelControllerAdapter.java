@@ -28,6 +28,7 @@ public class DrawerPanelControllerAdapter extends DrawPanelController implements
 		line.setEndCoordinates(x, y);
 
 		drawLine(line);
+		setPosition(x, y);
 	}
 
 	@Override
