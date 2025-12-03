@@ -56,11 +56,7 @@ public class LineDrawerAdapter implements Job2dDriver {
                 return LineFactory.getBasicLine();
         }
     }
-
-    public void setLineType(LineType lineType) {
-        this.lineType = lineType;
-    }
-
+    
     @Override
     public String toString() {
         return "LineDrawerAdapter using " + lineType + " line";
