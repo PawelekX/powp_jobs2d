@@ -10,12 +10,10 @@ import edu.kis.legacy.drawer.panel.DrawPanelController;
 import edu.kis.powp.appbase.Application;
 import edu.kis.powp.jobs2d.drivers.adapter.DrawPanelAdapter;
 import edu.kis.powp.jobs2d.drivers.adapter.LineDrawerAdapter;
-import edu.kis.powp.jobs2d.events.SelectChangeVisibleOptionListener;
-import edu.kis.powp.jobs2d.events.SelectTestFigure2OptionListener;
-import edu.kis.powp.jobs2d.events.SelectTestFigureOptionListener;
-import edu.kis.powp.jobs2d.events.SelectTestFigureJaneOptionListener;
+import edu.kis.powp.jobs2d.events.*;
 import edu.kis.powp.jobs2d.features.DrawerFeature;
 import edu.kis.powp.jobs2d.features.DriverFeature;
+
 
 public class TestJobs2dPatterns {
 	private final static Logger logger = Logger.getLogger(Logger.GLOBAL_LOGGER_NAME);
@@ -34,6 +32,9 @@ public class TestJobs2dPatterns {
 		application.addTest("Figure Joe 1", selectTestFigureOptionListener);
 		application.addTest("Figure Joe 2", selectTestFigure2OptionListener);
 		application.addTest("Figure Jane", selectTestFigureJaneOptionListener);
+
+		application.addTest("Command Pattern Square Test", new SelectTestCommandSquareOptionListener(DriverFeature.getDriverManager()));
+		application.addTest("Command Pattern Triangle Test", new SelectTestCommandTriangleOptionListener(DriverFeature.getDriverManager()));
 	}
 
 	/**
@@ -72,7 +73,7 @@ public class TestJobs2dPatterns {
 		DefaultDrawerFrame defaultDrawerWindow = DefaultDrawerFrame.getDefaultDrawerFrame();
 		application.addComponentMenuElementWithCheckBox(DrawPanelController.class, "Default Drawer Visibility",
 				new SelectChangeVisibleOptionListener(defaultDrawerWindow), true);
-		defaultDrawerWindow.setVisible(true);
+		defaultDrawerWindow.setVisible(false);
 	}
 
 	/**
