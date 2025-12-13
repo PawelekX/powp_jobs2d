@@ -8,8 +8,15 @@ import java.util.List;
 import edu.kis.powp.command.DriverCommand;
 import edu.kis.powp.command.OperateToCommand;
 import edu.kis.powp.command.SetPositionCommand;
+import edu.kis.powp.jobs2d.drivers.DriverManager;
 
 public class SelectTestCommandSquareOptionListener implements ActionListener {
+
+    private DriverManager driverManager;
+
+    public SelectTestCommandSquareOptionListener(DriverManager driverManager) {
+        this.driverManager = driverManager;
+    }
 
     @Override
     public void actionPerformed(ActionEvent e) {
@@ -22,7 +29,7 @@ public class SelectTestCommandSquareOptionListener implements ActionListener {
         commands.add(new OperateToCommand(0, 0));
 
         for (DriverCommand command : commands) {
-            command.execute();
+            command.execute(driverManager.getCurrentDriver());
         }
     }
 }

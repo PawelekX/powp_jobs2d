@@ -1,7 +1,6 @@
 package edu.kis.powp.command;
 
 import edu.kis.powp.jobs2d.Job2dDriver;
-import edu.kis.powp.jobs2d.features.DriverFeature;
 
 /**
  * Concrete Command implementation for setting position.
@@ -18,8 +17,7 @@ public class SetPositionCommand implements DriverCommand {
     }
 
     @Override
-    public void execute() {
-        Job2dDriver driver = DriverFeature.getDriverManager().getCurrentDriver();
+    public void execute(Job2dDriver driver) {
         driver.setPosition(x, y);
     }
 }

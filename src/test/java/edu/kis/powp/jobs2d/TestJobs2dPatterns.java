@@ -14,6 +14,7 @@ import edu.kis.powp.jobs2d.events.*;
 import edu.kis.powp.jobs2d.features.DrawerFeature;
 import edu.kis.powp.jobs2d.features.DriverFeature;
 
+
 public class TestJobs2dPatterns {
 	private final static Logger logger = Logger.getLogger(Logger.GLOBAL_LOGGER_NAME);
 
@@ -32,8 +33,8 @@ public class TestJobs2dPatterns {
 		application.addTest("Figure Joe 2", selectTestFigure2OptionListener);
 		application.addTest("Figure Jane", selectTestFigureJaneOptionListener);
 
-		application.addTest("Command Pattern Square Test", new SelectTestCommandSquareOptionListener());
-		application.addTest("Command Pattern Triangle Test", new SelectTestCommandTriangleOptionListener());
+		application.addTest("Command Pattern Square Test", new SelectTestCommandSquareOptionListener(DriverFeature.getDriverManager()));
+		application.addTest("Command Pattern Triangle Test", new SelectTestCommandTriangleOptionListener(DriverFeature.getDriverManager()));
 	}
 
 	/**
