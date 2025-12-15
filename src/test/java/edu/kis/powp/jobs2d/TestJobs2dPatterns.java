@@ -35,6 +35,9 @@ public class TestJobs2dPatterns {
 
 		application.addTest("Command Pattern Square Test", new SelectTestCommandSquareOptionListener(DriverFeature.getDriverManager()));
 		application.addTest("Command Pattern Triangle Test", new SelectTestCommandTriangleOptionListener(DriverFeature.getDriverManager()));
+
+		application.addTest("Factory Pattern Circle Test", new SelectTestFactoryCircleOptionListener(DriverFeature.getDriverManager()));
+		application.addTest("Factory Pattern Rectangle Test", new SelectTestFactoryRectangleOptionListener(DriverFeature.getDriverManager()));
 	}
 
 	/**
