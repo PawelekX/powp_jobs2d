@@ -1,10 +1,11 @@
-package edu.kis.powp.command;
+package edu.kis.powp.composite;
 
+import edu.kis.powp.command.DriverCommand;
 import edu.kis.powp.jobs2d.Job2dDriver;
 
 import java.util.List;
 
-public class ComplexCommand implements DriverCommand{
+public class ComplexCommand implements DriverCommand {
     private List<DriverCommand> commands;
 
     public ComplexCommand(List<DriverCommand> commands) {
